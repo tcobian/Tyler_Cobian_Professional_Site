@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Tyler Cobian</title>
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Projects</title>
+      <link>/project/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>/project/pca/tas1-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/pca/tas1-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analysis of Snowshoe hare</title>
+      <link>/project/pca/tas1_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/pca/tas1_2/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;analysis-summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Analysis Summary&lt;/h3&gt;
+&lt;p&gt;In this project we will analyze Snowshoe hare weight between gender and age profiles from the Bananza Creek Experimental Forest. First we will create a plot that will visualize these trends and lastly we will create a table with their average values.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/PCA/tas1_2_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+Summary of average Snowshoe hare weights
+&lt;table class=&#34;table table-striped table-condensed&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Sex
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Age
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Average Weight
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+F
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+adult
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1525.2665
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+F
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+juvinille
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+813.0687
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+M
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+adult
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1442.7000
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+M
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+juvinille
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+925.6306
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Principal Components Analysis of Different Veggetables</title>
+      <link>/project/pca/pca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/pca/pca/</guid>
+      <description>
+
+
+&lt;p&gt;In this project we will perform and principal components analysis on different vegetables and their nutrient content. Data for this project was obtained from the USDA Food Data Central which provides data on the nutrient content of different foods. This dataset was retrieved from &lt;a href=&#34;https://fdc.nal.usda.gov/index.html&#34; class=&#34;uri&#34;&gt;https://fdc.nal.usda.gov/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/PCA/PCA_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;key-takeways-of-the-principal-components-analysis&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Key Takeways of the Principal Components Analysis&lt;/h4&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Certain vegetables are high in nutrients such as folate niacin, riboflavin, and thiamin while other veggies are higher in calories, vitamin B6, fiber, sugar, vitamins A, C, and E.&lt;/li&gt;
+&lt;li&gt;This begs the assertion that there are groups of vegetables that are high in these two categories of nutrients.&lt;/li&gt;
+&lt;li&gt;These nutrients account for over 50% of the variance between different vegetables.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

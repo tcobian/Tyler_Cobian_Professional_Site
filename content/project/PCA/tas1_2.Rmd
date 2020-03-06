@@ -1,0 +1,80 @@
+---
+title: "Analysis of Snowshoe hare"
+author: "Tyler Cobian"
+output: html_document
+---
+```{r setup, include=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+###Analysis Summary
+In this project we will analyze Snowshoe hare weight between gender and age profiles from the Bananza Creek Experimental Forest. First we will create a plot that will visualize these trends and lastly we will create a table with their average values.
+```{r, include=FALSE, warning=FALSE, error=FALSE}
+# load in the packages
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+# load in the dataset
+data<- read_csv("showshoe_lter.csv")
+```
+
+```{r, include=FALSE, warning=FALSE, error=FALSE}
+#Wrangle the data to only iclude sex, height, and weight
+# only select aex, age, and weight, drop all NAs and then turn J and A to juvinille and adult
+data_clean<- data %>% 
+  select(sex, age, weight) %>% 
+  drop_na() %>% 
+  mutate(case_when(age == "J" ~ "juvinille",
+                   age == "A" ~ "adult")) %>%
+  mutate(case_when(sex == "f" ~ "F",
+                   sex == "m" ~ "M",
+                   sex == "M" ~ "M",
+                   sex == "F" ~ "F")) %>% 
+  select(-age) %>% 
+  filter(sex != "?", sex != "F?", sex != "pf", sex != "M?") %>%
+  drop_na() 
+# rename the columns
+colnames(data_clean)<- c("sex1", "weight", "age", "sex")
+
+data_clean %>% 
+  select(-sex1)
+
+```
+
+```{r, warning=FALSE, echo=FALSE, error=FALSE}
+# create a graph that will visualize how sex and age influence the weight of Snowshoe Hare
+plot<- ggplot(data_clean, aes(x = weight, y = sex, fill = age))+
+  geom_point(aes(color = age), size = 3, alpha = 0.4)+
+  scale_color_manual(values = c("deepskyblue4", "cyan"))+
+  labs(title = "Weight of Male and Female Snowshoe Hare", y = "Sex", x = "Weight(g)")+
+  theme_minimal()
+plot
+```
+
+Summary of average Snowshoe hare weights
+```{r, warning=FALSE, echo=FALSE, error=FALSE}
+#first make a table with the mean weights of each age and sex of hare
+table<- data_clean %>% 
+  group_by(sex, age) %>% 
+  summarize(
+    weight = mean(weight)
+  ) %>% 
+  rename("Sex" = "sex", "Age" = "age", "Average Weight" = "weight") %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = c("striped", "condensed", position = "float left"))
+table
+# also relabel the columns and format the table nicely
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

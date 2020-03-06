@@ -1,0 +1,60 @@
+---
+title: "Principal Components Analysis of Different Veggetables"
+author: "Tyler Cobian"
+output: html_document
+---
+In this project we will perform and principal components analysis on different vegetables and their nutrient content. Data for this project was obtained from the USDA Food Data Central which provides data on the nutrient content of different foods. This dataset was retrieved from https://fdc.nal.usda.gov/index.html
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE, echo=FALSE, warning=FALSE, error=FALSE}
+# laod in the packages
+library(tidyverse)
+library(janitor)
+library(here)
+library(naniar)
+library(VIM)
+library(skimr)
+library(ggfortify)
+```
+
+```{r, include=FALSE, echo=FALSE, warning=FALSE, error=FALSE}
+# load in the data and clean it
+nutri<- read_csv("usda_nutrients.csv") 
+
+# Clean the data 
+nutri_clean<- nutri %>% 
+  select(FoodGroup, Energy_kcal:Calcium_mg) %>% # Choose the nutrients to include in analysis
+  filter(FoodGroup == "Vegetables and Vegetable Products") %>% # Choose the food type to include 
+  select(-FoodGroup) %>% # Make food group a number for the PCA
+  drop_na()
+# Rename the columns
+colnames(nutri_clean)<- c("Calories", "Protein", "Fat", "Carbs", "Surgar", "Fiber", "Viatmin A", "Vitamin B6", "Vitamin B12", "Vitamin C", "Vitamin E", "Folate", "Niacin", "Riboflavin", "Thiamin", "Calcium")
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE}
+# Do the PCA
+nutri_pca<- prcomp(nutri_clean, scale = TRUE)
+
+# Now graph the biplot
+nutri_plot<- autoplot(nutri_pca,
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 3,
+                      loadings.label.colour = "black",
+                      loadings.label.repel = TRUE)+
+  theme_minimal()+
+  scale_y_continuous(limits = c(-0.4, 0.6))+
+  scale_x_continuous(limits = c(0, 0.5))+
+  labs(title = "Principcal Components Analysis of Vegetables", caption = "Principal components analysis of the affect of nutrient levels on variance in different veggetables.")
+nutri_plot
+
+```
+
+
+#### Key Takeways of the Principal Components Analysis
+1. Certain vegetables are high in nutrients such as folate niacin, riboflavin, and thiamin while other veggies are higher in calories, vitamin B6, fiber, sugar, vitamins A, C, and E. 
+2. This begs the assertion that there are groups of vegetables that are high in these two categories of nutrients.
+3. These nutrients account for over 50% of the variance between different vegetables.
