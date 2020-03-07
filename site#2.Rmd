@@ -19,7 +19,7 @@ new_site(theme = "gcushen/hugo-academic",
          theme_example = TRUE, 
          empty_dirs = TRUE,
          to_yaml = TRUE)
-
+blogdown::serve_site()
 
 ```
 

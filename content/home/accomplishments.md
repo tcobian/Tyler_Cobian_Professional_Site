@@ -25,9 +25,7 @@ date_format = "Jan 2006"
   certificate_url = ""
   date_start = "2013-01-01"
   date_end = "2017-01-01"
-  description = 
-  Compete in the 2017 youth 19 world championships in Porto Portugal
-  """
+  description = "Compete in the 2017 youth 19 world championships in Porto Portugal"
 
 [[item]]
   organization = "University of California Merced"
@@ -36,7 +34,7 @@ date_format = "Jan 2006"
   url = ""
   certificate_url = ""
   date_start = "2014-01-01"
-  date_end = 2018=01-01""
+  date_end = "2018=01-01"
   description = ""
   
 +++
