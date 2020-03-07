@@ -17,6 +17,9 @@ date_format = "Jan 2006"
 #   `title`, `organization` and `date_start` are the required parameters.
 #   Leave other parameters empty if not required.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
+
+
+
 [[item]]
   organization = "USA Beach Volleyball"
   organization_url ="https://www.teamusa.org/usa-volleyball/usa-teams/beach-volleyball"
@@ -25,7 +28,7 @@ date_format = "Jan 2006"
   certificate_url = ""
   date_start = "2013-01-01"
   date_end = "2017-01-01"
-  description = "Compete in the 2017 youth 19 world championships in Porto Portugal"
+  description = """Compete in the 2017 youth 19 world championships in Porto Portugal"""
 
 [[item]]
   organization = "University of California Merced"
