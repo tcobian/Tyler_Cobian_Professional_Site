@@ -186,6 +186,10 @@
   </url>
   
   <url>
+    <loc>/project/assignment_2/readme/</loc>
+  </url>
+  
+  <url>
     <loc>/project/pca/tas1-2/</loc>
   </url>
   
@@ -199,6 +203,18 @@
   
   <url>
     <loc>/project/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/assignment_2/task3_tyler_cobian/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/assignment_2/task3_tyler_cobian.knit/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/assignment_2/task3_tyler_cobian.utf8/</loc>
   </url>
   
 </urlset>
