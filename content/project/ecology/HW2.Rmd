@@ -1,0 +1,151 @@
+---
+title: "Yeilds & Fertilizer Use Efficiency"
+author: "Tyler Cobian"
+date: "3/11/2019"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      error = FALSE,
+                      message = FALSE)
+library(devtools)
+library(gganimate)
+library(devtools)
+library(tidyverse)
+library(RColorBrewer)
+library(gifski)
+library(png)
+
+
+
+```
+
+```{r}
+fertilizer<- read_csv("fertilizer.csv")
+grain<- read_csv("grain.csv") 
+
+```
+1. Patterns in yeild over time
+In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.
+
+a. Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.
+
+```{r}
+yeilds_graph<- ggplot(grain, aes(x = year, y = yield))+
+  geom_line(aes(color = commodity), size = 0.6, alpha = 0.8)+
+  facet_wrap(~commodity, scales = "free")+
+  theme_classic()+
+  labs(title = "Changes in Yeilds by Commodity", caption = "Yeild growth in the United States for corn, barley, oats, and sorghum
+       from 1866 to 2018 measured in bushels per acre.", y = "Yield (bushels per acre)")+
+  transition_reveal(id = yield, along = year)
+
+animate(yeilds_graph, nframes = 24, renderer = gifski_renderer("Cobian_Tyler_animated.gif"))
+  
+
+yeilds_graph
+
+```
+
+2. Create a finalized plot (including title and caption) of fertilizer use vs time for each of the crops in the dataset.
+
+```{r}
+fert_graph<- ggplot(fertilizer, aes(x = year, y = ppa))+
+  geom_point(aes(color = fertilizer), size = 0.5, alpha = 1)+
+  facet_wrap(~crop)+
+  scale_fill_brewer("Blues")+
+  labs(title = "Fertilizer Application by Crop",
+       caption = "The increase in nitrogen, phosphate, and potassium fertilizer In the United States 
+       between 1964 and 2017 applied to corn, soybeans, and wheat in pounds per acre.",
+       y = "Pounds per Acre")+
+  theme(plot.title = element_text(hjust = 0.5, size = 10),
+        plot.caption = element_text(hjust = 0.5, size = 8))
+ 
+
+
+
+
+fert_graph
+
+```
+3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.
+
+
+```{r, include=FALSE}
+fert_1<- fertilizer %>% 
+  filter(crop == "Corn")
+fert_1
+
+grain_1<- grain %>% 
+  filter(commodity == "Corn")
+grain_1
+
+yield_grain<- merge(fert_1, grain_1) %>% 
+  select(year, crop, ppa, yield, fertilizer)
+
+yield_grain
+```
+
+
+```{r}
+# make a new df with fertilizer usage and yeild for corn
+yg_graph<- ggplot(yield_grain)+
+  geom_line(aes(x = yield, y = ppa, colour = year))+
+  facet_wrap(~fertilizer)+
+  labs(title = "Corn Yield Gains by Pound of Fertilizer Applied by Acre", caption = "Yeild gained from increased fertilizer application over time by fertilizer type.", y = "Yield (bushels per acre)", x = "Fertilizer (pounds per acre)")+
+  theme(plot.caption = element_text(hjust = 0),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "transparent", colour = NA),
+        plot.background = element_rect(fill = "transparent", colour = NA),
+        legend.position = "none")
+yg_graph
+
+ggsave("yeild_return.png", yg_graph, bg = "transparent")
+
+# make a CSV out of the yeild_grain
+
+# write.csv(yield_grain, file = "returns_fertilizer.csv")
+
+
+
+```
+
+```{r, include=FALSE}
+nitrogen_return<- yield_grain %>% 
+  filter(fertilizer == "nitrogen")
+nitrogen_return
+write.csv(nitrogen_return, file = "nitrogen_return.csv")
+
+phosphate_return<- yield_grain %>% 
+  filter(fertilizer == "phosphate")
+nitrogen_return
+write.csv(nitrogen_return, file = "phosphate_return.csv")
+
+potassium_return<- yield_grain %>% 
+  filter(fertilizer == "potassium")
+nitrogen_return
+ write.csv(nitrogen_return, file = "potassium_return.csv")
+
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
