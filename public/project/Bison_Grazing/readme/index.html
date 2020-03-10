@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;) grain&lt;- read_csv(&quot;grain.csv&quot;)  Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.  Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.  yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))&#43; geom_line(aes(color = commodity), size = 0.">
+  <meta name="description" content="Bison_Grazing ">
 
   
-  <link rel="alternate" hreflang="en-us" href="/project/ecology/hw2/">
+  <link rel="alternate" hreflang="en-us" href="/project/bison_grazing/readme/">
 
   
 
@@ -215,7 +215,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/project/ecology/hw2/">
+  <link rel="canonical" href="/project/bison_grazing/readme/">
 
   
   
@@ -229,9 +229,9 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Tyler Cobian">
-  <meta property="og:url" content="/project/ecology/hw2/">
-  <meta property="og:title" content="Yeilds &amp; Fertilizer Use Efficiency | Tyler Cobian">
-  <meta property="og:description" content="fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;) grain&lt;- read_csv(&quot;grain.csv&quot;)  Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.  Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.  yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))&#43; geom_line(aes(color = commodity), size = 0."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="/project/bison_grazing/readme/">
+  <meta property="og:title" content=" | Tyler Cobian">
+  <meta property="og:description" content="Bison_Grazing "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,9 +257,9 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/project/ecology/hw2/"
+    "@id": "/project/bison_grazing/readme/"
   },
-  "headline": "Yeilds \u0026 Fertilizer Use Efficiency",
+  "headline": "",
   
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -277,7 +277,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "fertilizer\u0026lt;- read_csv(\u0026quot;fertilizer.csv\u0026quot;) grain\u0026lt;- read_csv(\u0026quot;grain.csv\u0026quot;)  Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.  Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.  yeilds_graph\u0026lt;- ggplot(grain, aes(x = year, y = yield))+ geom_line(aes(color = commodity), size = 0."
+  "description": "Bison_Grazing "
 }
 </script>
 
@@ -295,7 +295,7 @@
 
 
 
-  <title>Yeilds &amp; Fertilizer Use Efficiency | Tyler Cobian</title>
+  <title> | Tyler Cobian</title>
 
 </head>
 
@@ -521,7 +521,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Yeilds &amp; Fertilizer Use Efficiency</h1>
+  <h1></h1>
 
   
 
@@ -580,68 +580,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-
-<pre class="r"><code>fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;)
-grain&lt;- read_csv(&quot;grain.csv&quot;) </code></pre>
-<ol style="list-style-type: decimal">
-<li>Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.</li>
-</ol>
-<pre class="r"><code>yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))+
-  geom_line(aes(color = commodity), size = 0.6, alpha = 0.8)+
-  facet_wrap(~commodity, scales = &quot;free&quot;)+
-  theme_classic()+
-  labs(title = &quot;Changes in Yeilds by Commodity&quot;, caption = &quot;Yeild growth in the United States for corn, barley, oats, and sorghum
-       from 1866 to 2018 measured in bushels per acre.&quot;, y = &quot;Yield (bushels per acre)&quot;)+
-  transition_reveal(id = yield, along = year)
-
-animate(yeilds_graph, nframes = 24, renderer = gifski_renderer(&quot;Cobian_Tyler_animated.gif&quot;))
-  
-
-yeilds_graph</code></pre>
-<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Create a finalized plot (including title and caption) of fertilizer use vs time for each of the crops in the dataset.</li>
-</ol>
-<pre class="r"><code>fert_graph&lt;- ggplot(fertilizer, aes(x = year, y = ppa))+
-  geom_point(aes(color = fertilizer), size = 0.5, alpha = 1)+
-  facet_wrap(~crop)+
-  scale_fill_brewer(&quot;Blues&quot;)+
-  labs(title = &quot;Fertilizer Application by Crop&quot;,
-       caption = &quot;The increase in nitrogen, phosphate, and potassium fertilizer In the United States 
-       between 1964 and 2017 applied to corn, soybeans, and wheat in pounds per acre.&quot;,
-       y = &quot;Pounds per Acre&quot;)+
-  theme(plot.title = element_text(hjust = 0.5, size = 10),
-        plot.caption = element_text(hjust = 0.5, size = 8))
- 
-
-
-
-
-fert_graph</code></pre>
-<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-3-1.png" width="672" /> 3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.</p>
-<pre class="r"><code># make a new df with fertilizer usage and yeild for corn
-yg_graph&lt;- ggplot(yield_grain)+
-  geom_line(aes(x = yield, y = ppa, colour = year))+
-  facet_wrap(~fertilizer)+
-  labs(title = &quot;Corn Yield Gains by Pound of Fertilizer Applied by Acre&quot;, caption = &quot;Yeild gained from increased fertilizer application over time by fertilizer type.&quot;, y = &quot;Yield (bushels per acre)&quot;, x = &quot;Fertilizer (pounds per acre)&quot;)+
-  theme(plot.caption = element_text(hjust = 0),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
-        plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
-        legend.position = &quot;none&quot;)
-yg_graph</code></pre>
-<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<pre class="r"><code>ggsave(&quot;yeild_return.png&quot;, yg_graph, bg = &quot;transparent&quot;)
-
-# make a CSV out of the yeild_grain
-
-# write.csv(yield_grain, file = &quot;returns_fertilizer.csv&quot;)</code></pre>
+      <h1 id="bison_grazing">Bison_Grazing</h1>
 
     </div>
 
@@ -664,7 +603,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/ecology/hw2/&amp;text=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/project/bison_grazing/readme/&amp;text=" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -677,7 +616,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/ecology/hw2/&amp;t=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/project/bison_grazing/readme/&amp;t=" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -690,7 +629,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="mailto:?subject=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency&amp;body=/project/ecology/hw2/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=&amp;body=/project/bison_grazing/readme/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -703,7 +642,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/ecology/hw2/&amp;title=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/project/bison_grazing/readme/&amp;title=" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -716,7 +655,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency%20/project/ecology/hw2/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%20/project/bison_grazing/readme/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -729,7 +668,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/ecology/hw2/&amp;title=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/project/bison_grazing/readme/&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

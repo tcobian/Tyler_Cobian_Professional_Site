@@ -9,15 +9,62 @@ output:
 
 
 
+<pre class="r"><code>fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;)
+grain&lt;- read_csv(&quot;grain.csv&quot;) </code></pre>
 <ol style="list-style-type: decimal">
 <li>Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
 <li>Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.</li>
 </ol>
+<pre class="r"><code>yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))+
+  geom_line(aes(color = commodity), size = 0.6, alpha = 0.8)+
+  facet_wrap(~commodity, scales = &quot;free&quot;)+
+  theme_classic()+
+  labs(title = &quot;Changes in Yeilds by Commodity&quot;, caption = &quot;Yeild growth in the United States for corn, barley, oats, and sorghum
+       from 1866 to 2018 measured in bushels per acre.&quot;, y = &quot;Yield (bushels per acre)&quot;)+
+  transition_reveal(id = yield, along = year)
+
+animate(yeilds_graph, nframes = 24, renderer = gifski_renderer(&quot;Cobian_Tyler_animated.gif&quot;))
+  
+
+yeilds_graph</code></pre>
 <p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Create a finalized plot (including title and caption) of fertilizer use vs time for each of the crops in the dataset.</li>
 </ol>
+<pre class="r"><code>fert_graph&lt;- ggplot(fertilizer, aes(x = year, y = ppa))+
+  geom_point(aes(color = fertilizer), size = 0.5, alpha = 1)+
+  facet_wrap(~crop)+
+  scale_fill_brewer(&quot;Blues&quot;)+
+  labs(title = &quot;Fertilizer Application by Crop&quot;,
+       caption = &quot;The increase in nitrogen, phosphate, and potassium fertilizer In the United States 
+       between 1964 and 2017 applied to corn, soybeans, and wheat in pounds per acre.&quot;,
+       y = &quot;Pounds per Acre&quot;)+
+  theme(plot.title = element_text(hjust = 0.5, size = 10),
+        plot.caption = element_text(hjust = 0.5, size = 8))
+ 
+
+
+
+
+fert_graph</code></pre>
 <p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-3-1.png" width="672" /> 3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.</p>
+<pre class="r"><code># make a new df with fertilizer usage and yeild for corn
+yg_graph&lt;- ggplot(yield_grain)+
+  geom_line(aes(x = yield, y = ppa, colour = year))+
+  facet_wrap(~fertilizer)+
+  labs(title = &quot;Corn Yield Gains by Pound of Fertilizer Applied by Acre&quot;, caption = &quot;Yeild gained from increased fertilizer application over time by fertilizer type.&quot;, y = &quot;Yield (bushels per acre)&quot;, x = &quot;Fertilizer (pounds per acre)&quot;)+
+  theme(plot.caption = element_text(hjust = 0),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
+        plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
+        legend.position = &quot;none&quot;)
+yg_graph</code></pre>
 <p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;yeild_return.png&quot;, yg_graph, bg = &quot;transparent&quot;)
+
+# make a CSV out of the yeild_grain
+
+# write.csv(yield_grain, file = &quot;returns_fertilizer.csv&quot;)</code></pre>

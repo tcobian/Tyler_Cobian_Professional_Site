@@ -21,16 +21,6 @@
     </item>
     
     <item>
-      <title></title>
-      <link>/project/shiny_app/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/shiny_app/readme/</guid>
-      <description>&lt;h1 id=&#34;carbon_for_crops&#34;&gt;Carbon_for_Crops&lt;/h1&gt;
-&lt;p&gt;Shiny app visualizing the changes in soil organic carbon and net greenhouse gas emissions from regenerative agriculture.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Analysis of Snowshoe hare</title>
       <link>/project/pca/tas1_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -110,6 +100,45 @@ juvinille
     </item>
     
     <item>
+      <title>Impact of Grazing Intensity on Soil Cabron and GHG Emissions</title>
+      <link>/project/bison_grazing/bison/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/bison_grazing/bison/</guid>
+      <description>
+
+
+&lt;p&gt;This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.&lt;/p&gt;
+&lt;p&gt;The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire&lt;/p&gt;
+&lt;p&gt;The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp;amp; high frequency, and lastly a no grazing scenario.&lt;/p&gt;
+&lt;p&gt;The second graphs shows the same analysis but accounting for total GHG emissions under the same scenarios.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Vizualize the grazing sensativity
+
+bison_grazing_soc_bar&amp;lt;- ggplot(bison_grazing_df, aes(y = SOC, x = grazing, fill = grazing))+
+  geom_bar(stat = &amp;quot;identity&amp;quot;, position = &amp;quot;dodge&amp;quot;, show.legend = &amp;quot;False&amp;quot;, width = 0.5)+
+  scale_x_discrete(limits = c(&amp;quot;Regenerative&amp;quot;, &amp;quot;High Intensity&amp;quot;, &amp;quot;High Frequency&amp;quot;, &amp;quot;High Intensity &amp;amp; High Frequency&amp;quot;))+
+  scale_fill_manual(values = c(&amp;quot;darkseagreen3&amp;quot;, &amp;quot;darkseagreen2&amp;quot;, &amp;quot;darkseagreen4&amp;quot;, &amp;quot;darkseagreen1&amp;quot;))+
+  geom_hline(yintercept = 0)+
+  labs(y =&amp;quot;kgSOC/ha&amp;quot;, x = element_blank(), title = &amp;quot;Grazing Practices &amp;amp; SOC&amp;quot;)+
+  theme_classic()+
+  theme(plot.title = element_text(hjust = 0.5, size = 30), axis.text.x = element_text(size = 20, angle = 45, hjust = 1), axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 20), strip.text = element_text(size = 20))
+
+bison_grazing_soc_bar&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/Bison_Grazing/Bison_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;1536&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bison_grazing_gwp_bar&amp;lt;- ggplot(bison_grazing_df, aes(y = GWP, x = grazing, fill = grazing))+
+  geom_bar(stat = &amp;quot;identity&amp;quot;, position = &amp;quot;dodge&amp;quot;, show.legend = &amp;quot;False&amp;quot;, width = 0.5)+
+  scale_x_discrete(limits = c(&amp;quot;Regenerative&amp;quot;, &amp;quot;High Intensity&amp;quot;, &amp;quot;High Frequency&amp;quot;, &amp;quot;High Intensity &amp;amp; High Frequency&amp;quot;))+
+  scale_fill_manual(values = c(&amp;quot;darkseagreen3&amp;quot;, &amp;quot;darkseagreen2&amp;quot;, &amp;quot;darkseagreen4&amp;quot;, &amp;quot;darkseagreen1&amp;quot;))+
+  geom_hline(yintercept = 0)+
+  labs(y =&amp;quot;kgCO2e/ha&amp;quot;, x = element_blank(), title = &amp;quot;Grazing Parctices &amp;amp; GHG Emissions&amp;quot;)+
+  theme_classic()+
+  theme(plot.title = element_text(hjust = 0.5, size = 30), axis.text.x = element_text(size = 20, angle = 45, hjust = 1), axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 20), strip.text = element_text(size = 20))
+
+bison_grazing_gwp_bar&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/Bison_Grazing/Bison_files/figure-html/unnamed-chunk-3-2.png&#34; width=&#34;1536&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Principal Components Analysis of Different Veggetables</title>
       <link>/project/pca/pca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -138,18 +167,65 @@ juvinille
       <description>
 
 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fertilizer&amp;lt;- read_csv(&amp;quot;fertilizer.csv&amp;quot;)
+grain&amp;lt;- read_csv(&amp;quot;grain.csv&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
 &lt;li&gt;Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;yeilds_graph&amp;lt;- ggplot(grain, aes(x = year, y = yield))+
+  geom_line(aes(color = commodity), size = 0.6, alpha = 0.8)+
+  facet_wrap(~commodity, scales = &amp;quot;free&amp;quot;)+
+  theme_classic()+
+  labs(title = &amp;quot;Changes in Yeilds by Commodity&amp;quot;, caption = &amp;quot;Yeild growth in the United States for corn, barley, oats, and sorghum
+       from 1866 to 2018 measured in bushels per acre.&amp;quot;, y = &amp;quot;Yield (bushels per acre)&amp;quot;)+
+  transition_reveal(id = yield, along = year)
+
+animate(yeilds_graph, nframes = 24, renderer = gifski_renderer(&amp;quot;Cobian_Tyler_animated.gif&amp;quot;))
+  
+
+yeilds_graph&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/project/ecology/HW2_files/figure-html/unnamed-chunk-2-1.gif&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Create a finalized plot (including title and caption) of fertilizer use vs time for each of the crops in the dataset.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fert_graph&amp;lt;- ggplot(fertilizer, aes(x = year, y = ppa))+
+  geom_point(aes(color = fertilizer), size = 0.5, alpha = 1)+
+  facet_wrap(~crop)+
+  scale_fill_brewer(&amp;quot;Blues&amp;quot;)+
+  labs(title = &amp;quot;Fertilizer Application by Crop&amp;quot;,
+       caption = &amp;quot;The increase in nitrogen, phosphate, and potassium fertilizer In the United States 
+       between 1964 and 2017 applied to corn, soybeans, and wheat in pounds per acre.&amp;quot;,
+       y = &amp;quot;Pounds per Acre&amp;quot;)+
+  theme(plot.title = element_text(hjust = 0.5, size = 10),
+        plot.caption = element_text(hjust = 0.5, size = 8))
+ 
+
+
+
+
+fert_graph&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/project/ecology/HW2_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt; 3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# make a new df with fertilizer usage and yeild for corn
+yg_graph&amp;lt;- ggplot(yield_grain)+
+  geom_line(aes(x = yield, y = ppa, colour = year))+
+  facet_wrap(~fertilizer)+
+  labs(title = &amp;quot;Corn Yield Gains by Pound of Fertilizer Applied by Acre&amp;quot;, caption = &amp;quot;Yeild gained from increased fertilizer application over time by fertilizer type.&amp;quot;, y = &amp;quot;Yield (bushels per acre)&amp;quot;, x = &amp;quot;Fertilizer (pounds per acre)&amp;quot;)+
+  theme(plot.caption = element_text(hjust = 0),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = &amp;quot;transparent&amp;quot;, colour = NA),
+        plot.background = element_rect(fill = &amp;quot;transparent&amp;quot;, colour = NA),
+        legend.position = &amp;quot;none&amp;quot;)
+yg_graph&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/project/ecology/HW2_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggsave(&amp;quot;yeild_return.png&amp;quot;, yg_graph, bg = &amp;quot;transparent&amp;quot;)
+
+# make a CSV out of the yeild_grain
+
+# write.csv(yield_grain, file = &amp;quot;returns_fertilizer.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

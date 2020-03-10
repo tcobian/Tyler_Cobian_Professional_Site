@@ -801,4 +801,6 @@ observe({
 
 shinyApp(ui = ui, server = server)
 
+runApp()
+
 

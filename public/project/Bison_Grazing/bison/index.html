@@ -28,10 +28,12 @@
   
     
   
-  <meta name="description" content="fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;) grain&lt;- read_csv(&quot;grain.csv&quot;)  Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.  Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.  yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))&#43; geom_line(aes(color = commodity), size = 0.">
+  <meta name="description" content="This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.
+The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire
+The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp; high frequency, and lastly a no grazing scenario.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/project/ecology/hw2/">
+  <link rel="alternate" hreflang="en-us" href="/project/bison_grazing/bison/">
 
   
 
@@ -215,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/project/ecology/hw2/">
+  <link rel="canonical" href="/project/bison_grazing/bison/">
 
   
   
@@ -229,9 +231,11 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Tyler Cobian">
-  <meta property="og:url" content="/project/ecology/hw2/">
-  <meta property="og:title" content="Yeilds &amp; Fertilizer Use Efficiency | Tyler Cobian">
-  <meta property="og:description" content="fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;) grain&lt;- read_csv(&quot;grain.csv&quot;)  Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.  Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.  yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))&#43; geom_line(aes(color = commodity), size = 0."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="/project/bison_grazing/bison/">
+  <meta property="og:title" content="Impact of Grazing Intensity on Soil Cabron and GHG Emissions | Tyler Cobian">
+  <meta property="og:description" content="This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.
+The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire
+The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp; high frequency, and lastly a no grazing scenario."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,9 +261,9 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/project/ecology/hw2/"
+    "@id": "/project/bison_grazing/bison/"
   },
-  "headline": "Yeilds \u0026 Fertilizer Use Efficiency",
+  "headline": "Impact of Grazing Intensity on Soil Cabron and GHG Emissions",
   
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -277,7 +281,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "fertilizer\u0026lt;- read_csv(\u0026quot;fertilizer.csv\u0026quot;) grain\u0026lt;- read_csv(\u0026quot;grain.csv\u0026quot;)  Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.  Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.  yeilds_graph\u0026lt;- ggplot(grain, aes(x = year, y = yield))+ geom_line(aes(color = commodity), size = 0."
+  "description": "This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.\nThe data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire\nThe first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity \u0026amp; high frequency, and lastly a no grazing scenario."
 }
 </script>
 
@@ -295,7 +299,7 @@
 
 
 
-  <title>Yeilds &amp; Fertilizer Use Efficiency | Tyler Cobian</title>
+  <title>Impact of Grazing Intensity on Soil Cabron and GHG Emissions | Tyler Cobian</title>
 
 </head>
 
@@ -521,7 +525,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Yeilds &amp; Fertilizer Use Efficiency</h1>
+  <h1>Impact of Grazing Intensity on Soil Cabron and GHG Emissions</h1>
 
   
 
@@ -583,65 +587,34 @@
       
 
 
-<pre class="r"><code>fertilizer&lt;- read_csv(&quot;fertilizer.csv&quot;)
-grain&lt;- read_csv(&quot;grain.csv&quot;) </code></pre>
-<ol style="list-style-type: decimal">
-<li>Patterns in yeild over time In “grains.csv”, there is a column for yield: bushels/acre. As discussed in Grassini et al. 2013 (from week6), there are 6 possible statistical models to describe crop yield trends over time.</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Create a finalized plot (including title and caption) of yield vs. time for each of the grains in the dataset.</li>
-</ol>
-<pre class="r"><code>yeilds_graph&lt;- ggplot(grain, aes(x = year, y = yield))+
-  geom_line(aes(color = commodity), size = 0.6, alpha = 0.8)+
-  facet_wrap(~commodity, scales = &quot;free&quot;)+
+<p>This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.</p>
+<p>The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire</p>
+<p>The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp; high frequency, and lastly a no grazing scenario.</p>
+<p>The second graphs shows the same analysis but accounting for total GHG emissions under the same scenarios.</p>
+<pre class="r"><code># Vizualize the grazing sensativity
+
+bison_grazing_soc_bar&lt;- ggplot(bison_grazing_df, aes(y = SOC, x = grazing, fill = grazing))+
+  geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = &quot;False&quot;, width = 0.5)+
+  scale_x_discrete(limits = c(&quot;Regenerative&quot;, &quot;High Intensity&quot;, &quot;High Frequency&quot;, &quot;High Intensity &amp; High Frequency&quot;))+
+  scale_fill_manual(values = c(&quot;darkseagreen3&quot;, &quot;darkseagreen2&quot;, &quot;darkseagreen4&quot;, &quot;darkseagreen1&quot;))+
+  geom_hline(yintercept = 0)+
+  labs(y =&quot;kgSOC/ha&quot;, x = element_blank(), title = &quot;Grazing Practices &amp; SOC&quot;)+
   theme_classic()+
-  labs(title = &quot;Changes in Yeilds by Commodity&quot;, caption = &quot;Yeild growth in the United States for corn, barley, oats, and sorghum
-       from 1866 to 2018 measured in bushels per acre.&quot;, y = &quot;Yield (bushels per acre)&quot;)+
-  transition_reveal(id = yield, along = year)
+  theme(plot.title = element_text(hjust = 0.5, size = 30), axis.text.x = element_text(size = 20, angle = 45, hjust = 1), axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 20), strip.text = element_text(size = 20))
 
-animate(yeilds_graph, nframes = 24, renderer = gifski_renderer(&quot;Cobian_Tyler_animated.gif&quot;))
-  
+bison_grazing_soc_bar</code></pre>
+<p><img src="/project/Bison_Grazing/Bison_files/figure-html/unnamed-chunk-3-1.png" width="1536" /></p>
+<pre class="r"><code>bison_grazing_gwp_bar&lt;- ggplot(bison_grazing_df, aes(y = GWP, x = grazing, fill = grazing))+
+  geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = &quot;False&quot;, width = 0.5)+
+  scale_x_discrete(limits = c(&quot;Regenerative&quot;, &quot;High Intensity&quot;, &quot;High Frequency&quot;, &quot;High Intensity &amp; High Frequency&quot;))+
+  scale_fill_manual(values = c(&quot;darkseagreen3&quot;, &quot;darkseagreen2&quot;, &quot;darkseagreen4&quot;, &quot;darkseagreen1&quot;))+
+  geom_hline(yintercept = 0)+
+  labs(y =&quot;kgCO2e/ha&quot;, x = element_blank(), title = &quot;Grazing Parctices &amp; GHG Emissions&quot;)+
+  theme_classic()+
+  theme(plot.title = element_text(hjust = 0.5, size = 30), axis.text.x = element_text(size = 20, angle = 45, hjust = 1), axis.text.y = element_text(size = 20), axis.title.y = element_text(size = 20), strip.text = element_text(size = 20))
 
-yeilds_graph</code></pre>
-<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Create a finalized plot (including title and caption) of fertilizer use vs time for each of the crops in the dataset.</li>
-</ol>
-<pre class="r"><code>fert_graph&lt;- ggplot(fertilizer, aes(x = year, y = ppa))+
-  geom_point(aes(color = fertilizer), size = 0.5, alpha = 1)+
-  facet_wrap(~crop)+
-  scale_fill_brewer(&quot;Blues&quot;)+
-  labs(title = &quot;Fertilizer Application by Crop&quot;,
-       caption = &quot;The increase in nitrogen, phosphate, and potassium fertilizer In the United States 
-       between 1964 and 2017 applied to corn, soybeans, and wheat in pounds per acre.&quot;,
-       y = &quot;Pounds per Acre&quot;)+
-  theme(plot.title = element_text(hjust = 0.5, size = 10),
-        plot.caption = element_text(hjust = 0.5, size = 8))
- 
-
-
-
-
-fert_graph</code></pre>
-<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-3-1.png" width="672" /> 3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.</p>
-<pre class="r"><code># make a new df with fertilizer usage and yeild for corn
-yg_graph&lt;- ggplot(yield_grain)+
-  geom_line(aes(x = yield, y = ppa, colour = year))+
-  facet_wrap(~fertilizer)+
-  labs(title = &quot;Corn Yield Gains by Pound of Fertilizer Applied by Acre&quot;, caption = &quot;Yeild gained from increased fertilizer application over time by fertilizer type.&quot;, y = &quot;Yield (bushels per acre)&quot;, x = &quot;Fertilizer (pounds per acre)&quot;)+
-  theme(plot.caption = element_text(hjust = 0),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
-        plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
-        legend.position = &quot;none&quot;)
-yg_graph</code></pre>
-<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<pre class="r"><code>ggsave(&quot;yeild_return.png&quot;, yg_graph, bg = &quot;transparent&quot;)
-
-# make a CSV out of the yeild_grain
-
-# write.csv(yield_grain, file = &quot;returns_fertilizer.csv&quot;)</code></pre>
+bison_grazing_gwp_bar</code></pre>
+<p><img src="/project/Bison_Grazing/Bison_files/figure-html/unnamed-chunk-3-2.png" width="1536" /></p>
 
     </div>
 
@@ -664,7 +637,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/ecology/hw2/&amp;text=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/project/bison_grazing/bison/&amp;text=Impact%20of%20Grazing%20Intensity%20on%20Soil%20Cabron%20and%20GHG%20Emissions" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -677,7 +650,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/ecology/hw2/&amp;t=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/project/bison_grazing/bison/&amp;t=Impact%20of%20Grazing%20Intensity%20on%20Soil%20Cabron%20and%20GHG%20Emissions" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -690,7 +663,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="mailto:?subject=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency&amp;body=/project/ecology/hw2/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Impact%20of%20Grazing%20Intensity%20on%20Soil%20Cabron%20and%20GHG%20Emissions&amp;body=/project/bison_grazing/bison/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -703,7 +676,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/ecology/hw2/&amp;title=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/project/bison_grazing/bison/&amp;title=Impact%20of%20Grazing%20Intensity%20on%20Soil%20Cabron%20and%20GHG%20Emissions" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -716,7 +689,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency%20/project/ecology/hw2/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Impact%20of%20Grazing%20Intensity%20on%20Soil%20Cabron%20and%20GHG%20Emissions%20/project/bison_grazing/bison/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -729,7 +702,7 @@ yg_graph</code></pre>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/ecology/hw2/&amp;title=Yeilds%20&amp;amp;%20Fertilizer%20Use%20Efficiency" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/project/bison_grazing/bison/&amp;title=Impact%20of%20Grazing%20Intensity%20on%20Soil%20Cabron%20and%20GHG%20Emissions" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
