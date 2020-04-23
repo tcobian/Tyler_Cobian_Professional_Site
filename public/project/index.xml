@@ -167,6 +167,7 @@ bison_grazing_gwp_bar&lt;/code&gt;&lt;/pre&gt;
       <description>
 
 
+&lt;p&gt;In this project we will analyze how historically crop yields have responded to different amount of fertilizer application. The crops analyzed are corn, soybean, and wheat and the fertiliers used are nitrogen, phosphate, and potassium based.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fertilizer&amp;lt;- read_csv(&amp;quot;fertilizer.csv&amp;quot;)
 grain&amp;lt;- read_csv(&amp;quot;grain.csv&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;

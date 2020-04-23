@@ -1,3 +1,12 @@
+---
+title: "Yeilds & Fertilizer Use Efficiency"
+author: "Tyler Cobian"
+date: "3/11/2019"
+output:
+  html_document: default
+  word_document: default
+---
+
 
 
 <p>In this project we will analyze how historically crop yields have responded to different amount of fertilizer application. The crops analyzed are corn, soybean, and wheat and the fertiliers used are nitrogen, phosphate, and potassium based.</p>
@@ -21,7 +30,7 @@ animate(yeilds_graph, nframes = 24, renderer = gifski_renderer(&quot;Cobian_Tyle
   
 
 yeilds_graph</code></pre>
-<p><img src="HW2_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
+<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Create a finalized plot (including title and caption) of fertilizer use vs time for each of the crops in the dataset.</li>
 </ol>
@@ -41,7 +50,7 @@ yeilds_graph</code></pre>
 
 
 fert_graph</code></pre>
-<p><img src="HW2_files/figure-html/unnamed-chunk-3-1.png" width="672" /> 3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.</p>
+<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-3-1.png" width="672" /> 3. For corn, create a finalized plot (including title and caption) of yield vs fertilizer ppa, separated by the type of fertilizer. Make the color of the dots correspond to year.</p>
 <pre class="r"><code># make a new df with fertilizer usage and yeild for corn
 yg_graph&lt;- ggplot(yield_grain)+
   geom_line(aes(x = yield, y = ppa, colour = year))+
@@ -54,7 +63,7 @@ yg_graph&lt;- ggplot(yield_grain)+
         plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
         legend.position = &quot;none&quot;)
 yg_graph</code></pre>
-<p><img src="HW2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/project/ecology/HW2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>ggsave(&quot;yeild_return.png&quot;, yg_graph, bg = &quot;transparent&quot;)
 
 # make a CSV out of the yeild_grain
