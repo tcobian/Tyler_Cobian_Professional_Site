@@ -30,7 +30,7 @@
   
   <meta name="description" content="This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.
 The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire
-The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp; high frequency, and lastly a no grazing scenario.">
+bison_regen&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;BAU&quot;) bison_regen_soc&lt;- sum(bison_regen$dSOC) bison_regen_gwp&lt;- sum(bison_regen$GWP) bison_high_intensity&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;high_intensity&quot;) bison_high_intensity_soc&lt;- sum(bison_high_intensity$dSOC) bison_high_intensity_gwp&lt;- sum(bison_high_intensity$GWP) bison_high_frequency&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;high_frequency&quot;) bison_high_frequency_soc&lt;- sum(bison_high_frequency$dSOC) bison_high_frequency_gwp&lt;- sum(bison_high_frequency$GWP) bison_high_frequency_high_intensity&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;high_frequency_high_intensity&quot;) bison_high_frequency_high_intensity_soc&lt;- sum(bison_high_frequency_high_intensity$dSOC) bison_high_frequency_high_intensity_gwp&lt;- sum(bison_high_frequency_high_intensity$GWP) bison_grazing_df&lt;- data.">
 
   
   <link rel="alternate" hreflang="en-us" href="/project/bison_grazing/bison/">
@@ -235,7 +235,7 @@ The first graph depicts the change of soil organic carbon (kg) over a 20 year pe
   <meta property="og:title" content="Impact of Grazing Intensity on Soil Cabron and GHG Emissions | Tyler Cobian">
   <meta property="og:description" content="This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.
 The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire
-The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp; high frequency, and lastly a no grazing scenario."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+bison_regen&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;BAU&quot;) bison_regen_soc&lt;- sum(bison_regen$dSOC) bison_regen_gwp&lt;- sum(bison_regen$GWP) bison_high_intensity&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;high_intensity&quot;) bison_high_intensity_soc&lt;- sum(bison_high_intensity$dSOC) bison_high_intensity_gwp&lt;- sum(bison_high_intensity$GWP) bison_high_frequency&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;high_frequency&quot;) bison_high_frequency_soc&lt;- sum(bison_high_frequency$dSOC) bison_high_frequency_gwp&lt;- sum(bison_high_frequency$GWP) bison_high_frequency_high_intensity&lt;- bison_grazing %&gt;% filter(practice == &quot;regen&quot;) %&gt;% filter(grazing == &quot;high_frequency_high_intensity&quot;) bison_high_frequency_high_intensity_soc&lt;- sum(bison_high_frequency_high_intensity$dSOC) bison_high_frequency_high_intensity_gwp&lt;- sum(bison_high_frequency_high_intensity$GWP) bison_grazing_df&lt;- data."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -281,7 +281,7 @@ The first graph depicts the change of soil organic carbon (kg) over a 20 year pe
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.\nThe data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire\nThe first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity \u0026amp; high frequency, and lastly a no grazing scenario."
+  "description": "This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.\nThe data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire\nbison_regen\u0026lt;- bison_grazing %\u0026gt;% filter(practice == \u0026quot;regen\u0026quot;) %\u0026gt;% filter(grazing == \u0026quot;BAU\u0026quot;) bison_regen_soc\u0026lt;- sum(bison_regen$dSOC) bison_regen_gwp\u0026lt;- sum(bison_regen$GWP) bison_high_intensity\u0026lt;- bison_grazing %\u0026gt;% filter(practice == \u0026quot;regen\u0026quot;) %\u0026gt;% filter(grazing == \u0026quot;high_intensity\u0026quot;) bison_high_intensity_soc\u0026lt;- sum(bison_high_intensity$dSOC) bison_high_intensity_gwp\u0026lt;- sum(bison_high_intensity$GWP) bison_high_frequency\u0026lt;- bison_grazing %\u0026gt;% filter(practice == \u0026quot;regen\u0026quot;) %\u0026gt;% filter(grazing == \u0026quot;high_frequency\u0026quot;) bison_high_frequency_soc\u0026lt;- sum(bison_high_frequency$dSOC) bison_high_frequency_gwp\u0026lt;- sum(bison_high_frequency$GWP) bison_high_frequency_high_intensity\u0026lt;- bison_grazing %\u0026gt;% filter(practice == \u0026quot;regen\u0026quot;) %\u0026gt;% filter(grazing == \u0026quot;high_frequency_high_intensity\u0026quot;) bison_high_frequency_high_intensity_soc\u0026lt;- sum(bison_high_frequency_high_intensity$dSOC) bison_high_frequency_high_intensity_gwp\u0026lt;- sum(bison_high_frequency_high_intensity$GWP) bison_grazing_df\u0026lt;- data."
 }
 </script>
 
@@ -589,6 +589,42 @@ The first graph depicts the change of soil organic carbon (kg) over a 20 year pe
 
 <p>This analysis will look at how the frequency and intensity of bison grazing affects soil organic carbon sequestration and net GHG emissions in South Dakota USA.</p>
 <p>The data used in this analysis was gathered from model outputs using the Decomposition and Denitrification model (DNDC) that was developed by the Univerity of Newhampshire</p>
+<pre class="r"><code>bison_regen&lt;- bison_grazing %&gt;% 
+  filter(practice == &quot;regen&quot;) %&gt;% 
+  filter(grazing == &quot;BAU&quot;)
+
+bison_regen_soc&lt;- sum(bison_regen$dSOC)
+bison_regen_gwp&lt;- sum(bison_regen$GWP)
+
+bison_high_intensity&lt;- bison_grazing %&gt;% 
+  filter(practice == &quot;regen&quot;) %&gt;% 
+  filter(grazing == &quot;high_intensity&quot;)
+
+bison_high_intensity_soc&lt;- sum(bison_high_intensity$dSOC)
+bison_high_intensity_gwp&lt;- sum(bison_high_intensity$GWP)
+
+
+bison_high_frequency&lt;- bison_grazing %&gt;% 
+  filter(practice == &quot;regen&quot;) %&gt;% 
+  filter(grazing == &quot;high_frequency&quot;)
+
+bison_high_frequency_soc&lt;- sum(bison_high_frequency$dSOC)
+bison_high_frequency_gwp&lt;- sum(bison_high_frequency$GWP)
+
+bison_high_frequency_high_intensity&lt;- bison_grazing %&gt;% 
+  filter(practice == &quot;regen&quot;) %&gt;% 
+  filter(grazing == &quot;high_frequency_high_intensity&quot;)
+
+bison_high_frequency_high_intensity_soc&lt;- sum(bison_high_frequency_high_intensity$dSOC)
+bison_high_frequency_high_intensity_gwp&lt;- sum(bison_high_frequency_high_intensity$GWP)
+
+
+
+bison_grazing_df&lt;- data.frame(
+  grazing = c(&quot;Regenerative&quot;, &quot;High Intensity&quot;, &quot;High Frequency&quot;, &quot;High Intensity &amp; High Frequency&quot;),
+  SOC = c(bison_regen_soc, bison_high_intensity_soc, bison_high_frequency_soc, bison_high_frequency_high_intensity_soc),
+  GWP = c(bison_regen_gwp, bison_high_intensity_gwp, bison_high_frequency_gwp, bison_high_frequency_high_intensity_gwp)
+) </code></pre>
 <p>The first graph depicts the change of soil organic carbon (kg) over a 20 year period under normal “regenerative” scenarios and then under a high intensity, high frequency, high intensity &amp; high frequency, and lastly a no grazing scenario.</p>
 <p>The second graphs shows the same analysis but accounting for total GHG emissions under the same scenarios.</p>
 <pre class="r"><code># Vizualize the grazing sensativity
