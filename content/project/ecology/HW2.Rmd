@@ -6,6 +6,9 @@ output:
   html_document: default
   word_document: default
 ---
+In this project we will analyze how historically crop yields have responded to different amount of fertilizer application. The crops analyzed are corn, soybean, and wheat and the fertiliers used are nitrogen, phosphate, and potassium based. 
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,
